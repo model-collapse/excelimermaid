@@ -1,0 +1,13 @@
+flowchart TD
+    Internet[Internet] --> Firewall[Firewall]
+    Firewall --> DMZ[DMZ]
+    DMZ --> Proxy[Reverse Proxy]
+    Proxy --> App1[App Server 1]
+    Proxy --> App2[App Server 2]
+    Proxy --> App3[App Server 3]
+    App1 --> Internal[Internal Network]
+    App2 --> Internal
+    App3 --> Internal
+    Internal --> DB[(Database)]
+    Internal --> Cache[(Redis Cache)]
+    Internal --> Storage[File Storage]

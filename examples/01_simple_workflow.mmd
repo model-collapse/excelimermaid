@@ -1,0 +1,7 @@
+flowchart LR
+    Start[Start] --> Process[Process Data]
+    Process --> Decision{Valid?}
+    Decision -->|Yes| Save[Save Results]
+    Decision -->|No| Error[Show Error]
+    Save --> End[End]
+    Error --> End

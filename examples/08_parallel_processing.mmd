@@ -1,0 +1,15 @@
+flowchart TD
+    Input[Input Data] --> Split[Split into Batches]
+    Split --> Worker1[Worker 1]
+    Split --> Worker2[Worker 2]
+    Split --> Worker3[Worker 3]
+    Split --> Worker4[Worker 4]
+    Worker1 --> Process1[Process Batch 1]
+    Worker2 --> Process2[Process Batch 2]
+    Worker3 --> Process3[Process Batch 3]
+    Worker4 --> Process4[Process Batch 4]
+    Process1 --> Merge[Merge Results]
+    Process2 --> Merge
+    Process3 --> Merge
+    Process4 --> Merge
+    Merge --> Output[Final Output]

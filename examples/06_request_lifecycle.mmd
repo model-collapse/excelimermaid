@@ -1,0 +1,12 @@
+flowchart LR
+    Browser[Browser] --> LB[Load Balancer]
+    LB --> Web1[Web Server 1]
+    LB --> Web2[Web Server 2]
+    Web1 --> App[App Server]
+    Web2 --> App
+    App --> Cache{In Cache?}
+    Cache -->|Yes| Return[Return Data]
+    Cache -->|No| DB[(Database)]
+    DB --> Store[Store in Cache]
+    Store --> Return
+    Return --> Browser

@@ -1,0 +1,14 @@
+flowchart TD
+    Start[Customer Order] --> Type{Order Type}
+    Type -->|Express| Express[Express Processing]
+    Type -->|Standard| Standard[Standard Processing]
+    Type -->|Economy| Economy[Economy Processing]
+    Express --> Pack1[Priority Packing]
+    Standard --> Pack2[Standard Packing]
+    Economy --> Pack3[Bulk Packing]
+    Pack1 --> Ship1[Next Day Shipping]
+    Pack2 --> Ship2[3-5 Day Shipping]
+    Pack3 --> Ship3[7-10 Day Shipping]
+    Ship1 --> Done[Delivered]
+    Ship2 --> Done
+    Ship3 --> Done

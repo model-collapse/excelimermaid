@@ -1,0 +1,12 @@
+flowchart LR
+    User[User Action] --> Event[Event Bus]
+    Event --> Handler1[Order Handler]
+    Event --> Handler2[Inventory Handler]
+    Event --> Handler3[Email Handler]
+    Event --> Handler4[Analytics Handler]
+    Handler1 --> DB1[(Orders DB)]
+    Handler2 --> DB2[(Inventory DB)]
+    Handler3 --> Email[Email Service]
+    Handler4 --> Analytics[(Analytics DB)]
+    DB1 --> Event2[Order Complete Event]
+    Event2 --> Notify[Notification Service]

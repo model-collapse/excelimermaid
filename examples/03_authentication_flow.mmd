@@ -1,0 +1,11 @@
+flowchart TD
+    User[User Login] --> Check{Credentials Valid?}
+    Check -->|No| Retry[Show Error]
+    Retry --> User
+    Check -->|Yes| MFA{MFA Enabled?}
+    MFA -->|Yes| Verify[Verify Code]
+    MFA -->|No| Token[Generate Token]
+    Verify --> Valid{Code Valid?}
+    Valid -->|No| Retry
+    Valid -->|Yes| Token
+    Token --> Success[Login Success]

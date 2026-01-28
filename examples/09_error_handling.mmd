@@ -1,0 +1,12 @@
+flowchart TD
+    Start[Start Process] --> Try[Try Operation]
+    Try --> Success{Success?}
+    Success -->|Yes| Complete[Complete]
+    Success -->|No| Retry{Retry Count < 3?}
+    Retry -->|Yes| Wait[Wait & Backoff]
+    Wait --> Try
+    Retry -->|No| Fallback{Fallback Available?}
+    Fallback -->|Yes| Alt[Use Fallback]
+    Fallback -->|No| Alert[Alert Team]
+    Alt --> Complete
+    Alert --> Failed[Mark as Failed]

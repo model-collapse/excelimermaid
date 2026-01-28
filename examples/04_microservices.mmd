@@ -1,0 +1,11 @@
+flowchart LR
+    Client[Client App] --> Gateway[API Gateway]
+    Gateway --> Auth[Auth Service]
+    Gateway --> User[User Service]
+    Gateway --> Order[Order Service]
+    Gateway --> Payment[Payment Service]
+    User --> DB1[(User DB)]
+    Order --> DB2[(Order DB)]
+    Payment --> DB3[(Payment DB)]
+    Order --> Queue[Message Queue]
+    Queue --> Notification[Notification Service]

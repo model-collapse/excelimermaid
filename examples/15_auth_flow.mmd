@@ -1,0 +1,9 @@
+flowchart TD
+    Start[User Login] --> Auth{Authenticated?}
+    Auth -->|Yes| Check{Has Permission?}
+    Auth -->|No| Login[Show Login Page]
+    Login --> Start
+    Check -->|Yes| Dashboard[Show Dashboard]
+    Check -->|No| Error[Access Denied]
+    Dashboard --> End[Done]
+    Error --> End

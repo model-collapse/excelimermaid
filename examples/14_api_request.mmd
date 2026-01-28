@@ -1,0 +1,16 @@
+flowchart LR
+    A[Client Request] --> B{Valid Request?}
+    B -->|Yes| C[Parse Data]
+    B -->|No| D[Return 400 Error]
+    C --> E{Data Complete?}
+    E -->|Yes| F[Process Request]
+    E -->|No| G[Request Additional Info]
+    G --> C
+    F --> H{Success?}
+    H -->|Yes| I[Return 200 OK]
+    H -->|No| J{Retry?}
+    J -->|Yes| F
+    J -->|No| K[Return 500 Error]
+    I --> L[Log Success]
+    K --> M[Log Error]
+    D --> M

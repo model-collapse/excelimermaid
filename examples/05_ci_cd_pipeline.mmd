@@ -1,0 +1,11 @@
+flowchart TD
+    Code[Code Commit] --> Build[Build]
+    Build --> Test{Tests Pass?}
+    Test -->|No| Notify[Notify Team]
+    Test -->|Yes| Security[Security Scan]
+    Security --> Deploy{Deploy?}
+    Deploy -->|Staging| Stage[Deploy to Staging]
+    Deploy -->|Production| Prod[Deploy to Production]
+    Stage --> Verify[Verify Deployment]
+    Prod --> Monitor[Monitor Health]
+    Notify --> Code

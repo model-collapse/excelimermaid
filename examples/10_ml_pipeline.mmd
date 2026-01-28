@@ -1,0 +1,14 @@
+flowchart LR
+    Data[Raw Data] --> Clean[Data Cleaning]
+    Clean --> Feature[Feature Engineering]
+    Feature --> Split[Train/Test Split]
+    Split --> Train[Train Model]
+    Train --> Evaluate[Evaluate]
+    Evaluate --> Good{Performance Good?}
+    Good -->|No| Tune[Hyperparameter Tuning]
+    Tune --> Train
+    Good -->|Yes| Deploy[Deploy Model]
+    Deploy --> Monitor[Monitor Performance]
+    Monitor --> Drift{Drift Detected?}
+    Drift -->|Yes| Retrain[Retrain Model]
+    Retrain --> Train
