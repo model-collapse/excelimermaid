@@ -176,4 +176,4 @@ MIT License - See ../LICENSE for details
 
 ## Credits
 
-Built on [excelimermaid](https://github.com/yourusername/excelimermaid) - an offline Python engine for Mermaid to Excalidraw conversion.
+Built on [excelimermaid](https://github.com/model-collapse/excelimermaid) - an offline Python engine for Mermaid to Excalidraw conversion.

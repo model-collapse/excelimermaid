@@ -4,23 +4,6 @@ An offline Python engine that renders Mermaid flowchart scripts with Excalidraw'
 
 ## Example Output
 
-```mermaid
-flowchart TD
-    Start[Start Process] --> Try[Try Operation]
-    Try --> Success{Success?}
-    Success -->|Yes| Complete[Complete]
-    Success -->|No| Retry{Retry Count < 3?}
-    Retry -->|Yes| Wait[Wait & Backoff]
-    Wait --> Try
-    Retry -->|No| Fallback{Fallback Available?}
-    Fallback -->|Yes| Alt[Use Fallback]
-    Fallback -->|No| Alert[Alert Team]
-    Alt --> Complete
-    Alert --> Failed[Mark as Failed]
-```
-
-**Rendered with Excalidraw style:**
-
 ![Error Handling Flow Example](examples/09_error_handling.svg)
 
 *Features intelligent routing with curved paths, adaptive corner rounding, and hand-drawn aesthetic*
@@ -50,7 +33,7 @@ pip install excelimermaid
 Or install from source:
 
 ```bash
-git clone https://github.com/yourusername/excelimermaid.git
+git clone https://github.com/model-collapse/excelimermaid.git
 cd excelimermaid
 pip install -e .
 ```
@@ -132,7 +115,7 @@ diagram.export("output.png", dpi=300)
 
 ### Node Shapes
 
-```mermaid
+```
 flowchart TD
     A[Rectangle]
     B(Rounded Rectangle)
@@ -150,7 +133,7 @@ flowchart TD
 
 ### Edge Types
 
-```mermaid
+```
 flowchart LR
     A --> B          %% Solid arrow
     C -.-> D         %% Dotted arrow
@@ -162,7 +145,7 @@ flowchart LR
 
 ### Edge Labels
 
-```mermaid
+```
 flowchart TD
     A -->|Label| B
     C -.->|Dotted Label| D
@@ -259,14 +242,14 @@ excelimermaid diagram.mmd -o output.svg \
     --route-offset 80.0
 ```
 
-For detailed routing configuration documentation, see [ROUTING_CONFIG.md](ROUTING_CONFIG.md).
+For detailed routing configuration documentation, see [ROUTING_CONFIG.md](docs/ROUTING_CONFIG.md).
 
 ## Development
 
 ### Setup Development Environment
 
 ```bash
-git clone https://github.com/yourusername/excelimermaid.git
+git clone https://github.com/model-collapse/excelimermaid.git
 cd excelimermaid
 pip install -e ".[dev]"
 ```
@@ -287,7 +270,7 @@ mypy src/
 
 ## Architecture
 
-See [DESIGN.md](DESIGN.md) for detailed architecture and design decisions.
+See [DESIGN.md](docs/DESIGN.md) for detailed architecture and design decisions.
 
 ## Roadmap
 
