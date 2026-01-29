@@ -26,6 +26,33 @@ An offline Python engine that renders Mermaid flowchart scripts with Excalidraw'
 
 ## Installation
 
+### System Dependencies
+
+For PNG export support, you need to install Cairo graphics library:
+
+**macOS:**
+```bash
+brew install cairo pkg-config
+```
+
+**Ubuntu/Debian:**
+```bash
+sudo apt-get update
+sudo apt-get install libcairo2-dev pkg-config python3-dev
+```
+
+**Fedora/RHEL:**
+```bash
+sudo dnf install cairo-devel pkg-config python3-devel
+```
+
+**Arch Linux:**
+```bash
+sudo pacman -S cairo pkgconf
+```
+
+### Python Package
+
 ```bash
 pip install excelimermaid
 ```
@@ -37,6 +64,8 @@ git clone https://github.com/model-collapse/excelimermaid.git
 cd excelimermaid
 pip install -e .
 ```
+
+**Note:** If you only need SVG output, you can skip the Cairo installation. PNG export will not be available but all other features will work.
 
 ### Claude Code Skill
 
