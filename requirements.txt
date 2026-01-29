@@ -9,6 +9,7 @@ fonttools>=4.47.0         # Font manipulation and embedding
 
 # Layout algorithms
 grandalf>=0.8             # Hierarchical graph layout (Sugiyama)
+pathfinding>=1.0.0        # A* pathfinding for edge routing
 
 # CLI
 click>=8.1.7              # Command-line interface
